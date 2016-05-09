@@ -1,7 +1,6 @@
 import CommonSettings._
 import Dependencies._
-import play.twirl.sbt.Import.TwirlKeys._
-import ScoverageSbtPlugin.ScoverageKeys._
+import scoverage.ScoverageSbtPlugin.ScoverageKeys._
 
 name := """scala-zookeeper-starterkit"""
 
@@ -18,26 +17,26 @@ val scoverageSettings = Seq(
 
 lazy val root = (
   project.in(file("."))
-  aggregate(common, serviceA, serviceB)
-)
+    aggregate(common, serviceA, serviceB)
+  )
 
 lazy val common = (
   BaseProject("common")
-  settings(libraryDependencies += zookeeper)
-  settings(scoverageSettings: _*)
-)
+    settings (libraryDependencies ++= Seq(zookeeper, curatorrecipies, curatorframework))
+    settings (scoverageSettings: _*)
+  )
 
 lazy val serviceA = (
   PlayProject("service-a")
-  settings(libraryDependencies ++= playDependencies)
-  settings(routesGenerator := InjectedRoutesGenerator)
-  settings(scoverageSettings: _*)
-) dependsOn(common)
+    settings (libraryDependencies ++= playDependencies)
+    settings (routesGenerator := InjectedRoutesGenerator)
+    settings (scoverageSettings: _*)
+  ) dependsOn (common)
 
 lazy val serviceB = (
   PlayProject("service-b")
-  settings(libraryDependencies ++= playDependencies)
-  settings(routesGenerator := InjectedRoutesGenerator)
-  settings(scoverageSettings: _*)
-) dependsOn(common)
+    settings (libraryDependencies ++= playDependencies)
+    settings (routesGenerator := InjectedRoutesGenerator)
+    settings (scoverageSettings: _*)
+  ) dependsOn (common)
 
