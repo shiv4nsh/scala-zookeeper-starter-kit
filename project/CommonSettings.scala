@@ -1,7 +1,6 @@
 import sbt._
 import Keys._
-import play.sbt.Play
-import play.sbt.PlayScala
+import play.PlayScala
 
 object CommonSettings {
 

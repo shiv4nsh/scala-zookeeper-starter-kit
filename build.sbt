@@ -1,9 +1,9 @@
 import CommonSettings._
 import Dependencies._
-import play.routes.compiler.InjectedRoutesGenerator
 import play.twirl.sbt.Import.TwirlKeys._
+import ScoverageSbtPlugin.ScoverageKeys._
 
-name := """scala-zookeeper-starter-kit"""
+name := """scala-zookeeper-starterkit"""
 
 version := "1.0"
 
@@ -23,7 +23,7 @@ lazy val root = (
 
 lazy val common = (
   BaseProject("common")
-  settings(libraryDependencies ++= playDependencies)
+  settings(libraryDependencies += zookeeper)
   settings(scoverageSettings: _*)
 )
 
@@ -40,3 +40,4 @@ lazy val serviceB = (
   settings(routesGenerator := InjectedRoutesGenerator)
   settings(scoverageSettings: _*)
 ) dependsOn(common)
+
