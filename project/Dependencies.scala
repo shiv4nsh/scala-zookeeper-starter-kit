@@ -23,6 +23,11 @@ object Dependencies {
 
   val zookeeper = "org.apache.zookeeper" % "zookeeper" % "3.4.8"
 
+  val curatorrecipies="org.apache.curator" % "curator-recipes" % "3.1.0"
+
+  val curatorframework="org.apache.curator" % "curator-framework" % "3.1.0"
+
+
   val playDependencies: Seq[ModuleID] = Seq(
     playframework.jdbc,
     playframework.cache,
