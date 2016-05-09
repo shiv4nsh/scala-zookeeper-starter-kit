@@ -15,5 +15,13 @@ project/plugins/project/
 # Scala-IDE specific
 .scala_dependencies
 .worksheet
+
+
 .idea/
 .idea_modules/
+/.idea
+/*.iml
+/.idea_modules
+project/activator-sbt-idea-shim.sbt
+*.iml
+*.eml
