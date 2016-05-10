@@ -22,7 +22,7 @@ lazy val root = (
 
 lazy val common = (
   BaseProject("common")
-    settings (libraryDependencies ++= Seq(zookeeper, curatorrecipies, curatorframework))
+    settings (libraryDependencies ++= Seq(zookeeper, curatorrecipies, curatorframework,curatorDiscovery,curatorTest))
     settings (scoverageSettings: _*)
   )
 

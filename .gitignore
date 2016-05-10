@@ -38,6 +38,7 @@ server.pid
 .idea/mongoSettings.xml
 .idea/*
 
+.idea/
 common/.classpath
 common/.project
 common/.settings

@@ -27,6 +27,9 @@ object Dependencies {
 
   val curatorframework="org.apache.curator" % "curator-framework" % "3.1.0"
 
+  val curatorDiscovery="org.apache.curator" % "curator-x-discovery" % "3.1.0"
+
+  val curatorTest="org.apache.curator" % "curator-test" % "3.1.0"
 
   val playDependencies: Seq[ModuleID] = Seq(
     playframework.jdbc,
