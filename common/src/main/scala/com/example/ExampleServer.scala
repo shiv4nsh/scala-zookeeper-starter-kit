@@ -1,3 +1,4 @@
+/*
 package com.example
 
 import java.io.Closeable
@@ -43,4 +44,4 @@ class ExampleServer(client: CuratorFramework
   def close(): Unit = {
     CloseableUtils.closeQuietly(serviceDiscovery);
   }
-}
+}*/
