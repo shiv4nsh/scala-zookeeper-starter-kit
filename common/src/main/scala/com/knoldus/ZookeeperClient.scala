@@ -1,11 +1,13 @@
 package com.knoldus
 
+import com.google.inject.Singleton
 import org.apache.curator.framework._
 import org.apache.curator.framework.recipes.cache.{NodeCache, NodeCacheListener}
 import org.apache.curator.retry.{ExponentialBackoffRetry, RetryNTimes}
 import org.apache.curator.x.discovery.{ServiceDiscoveryBuilder, ServiceInstance, UriSpec}
 import org.slf4j.LoggerFactory
 
+@Singleton
 class ZookeeperClient {
 
   private val logger = LoggerFactory.getLogger(this.getClass.getName)

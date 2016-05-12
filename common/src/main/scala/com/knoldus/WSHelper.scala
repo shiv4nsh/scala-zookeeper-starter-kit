@@ -1,3 +1,6 @@
+package com.knoldus
+
+
 
 import com.google.inject.Inject
 import play.api.libs.json.JsValue
