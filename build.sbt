@@ -1,5 +1,6 @@
 import CommonSettings._
 import Dependencies._
+import play.routes.compiler.InjectedRoutesGenerator
 import scoverage.ScoverageSbtPlugin.ScoverageKeys._
 
 name := """scala-zookeeper-starterkit"""
@@ -22,7 +23,7 @@ lazy val root = (
 
 lazy val common = (
   BaseProject("common")
-    settings (libraryDependencies ++= Seq(zookeeper, curatorrecipies, curatorframework,curatorDiscovery,curatorTest))
+    settings (libraryDependencies ++= commonModuleDependencies)
     settings (scoverageSettings: _*)
   )
 

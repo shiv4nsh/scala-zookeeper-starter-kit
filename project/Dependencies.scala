@@ -38,4 +38,6 @@ object Dependencies {
     playframework.json,
     playframework.specs2
   )
+
+  val commonModuleDependencies: Seq[ModuleID] = playDependencies ++ Seq(zookeeper, curatorrecipies, curatorframework,curatorDiscovery,curatorTest)
 }
