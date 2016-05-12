@@ -10,16 +10,16 @@ class ZookeeperClient {
 
   private val logger = LoggerFactory.getLogger(this.getClass.getName)
 
-  def registerInZookeeper(port: Integer) = {
+  def registerInZookeeper(address:String, serviceName:String,port: Integer) = {
     val curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(5, 1000))
     curatorFramework.start()
     val serviceInstance: ServiceInstance[Void] = ServiceInstance.builder()
       .uriSpec(new UriSpec("{scheme}://{address}:{port}"))
-      .address("localhost")
+      .address(address)
       .port(port)
-      .name("worker")
+      .name(serviceName)
       .build()
-    ServiceDiscoveryBuilder.builder[Void](Void.TYPE).basePath("load-balancing-example")
+    ServiceDiscoveryBuilder.builder[Void](Void.TYPE).basePath("scala-zookeeper-starterkit")
       .client(curatorFramework)
       .thisInstance(serviceInstance)
       .build()

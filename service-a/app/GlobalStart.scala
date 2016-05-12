@@ -13,7 +13,7 @@ class GlobalStart @Inject()(lifecycle: ApplicationLifecycle, zookeeperClient: Zo
   // ./activator "project service-a" -Dhttp.port=9000 "run 9000"
   val port = System.getProperty("http.port").toInt
   println(s"This is the start of service-a and port is ${}")
-  zookeeperClient.registerInZookeeper(port)
+  zookeeperClient.registerInZookeeper("service-a","localhost",port)
   //This will contain if you want to run some code on service stop (ctrl+D)
   lifecycle.addStopHook { () =>
     Future {
